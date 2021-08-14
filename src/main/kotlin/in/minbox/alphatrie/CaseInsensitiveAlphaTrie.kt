@@ -26,7 +26,17 @@ class CaseInsensitiveAlphaTrie: Trie {
     }
 
     override fun findShortestPrefix(s: String): Optional<String> {
-        TODO("Not yet implemented")
+        var idx = 0
+        var pointer = root
+        for(ch in s) {
+            val node = pointer.getNode(ch) ?: return Optional.empty()
+            if (node.isWord) return Optional.of(s.substring(0, idx + 1))
+
+            idx++
+            pointer = node
+
+        }
+        return Optional.empty()
     }
 
     override fun findAllStrings(): List<String> {

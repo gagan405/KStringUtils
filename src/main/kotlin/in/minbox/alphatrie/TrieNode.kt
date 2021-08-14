@@ -4,7 +4,7 @@ class TrieNode(char: Char) {
     val char: Char = char
     var isWord: Boolean = false
 
-    private var children: Array<TrieNode?> = Array(26, { x -> null })
+    private var children: Array<TrieNode?> = Array(26) { _ -> null }
 
     fun addNode(char: Char) {
         children[char - 'a'] = TrieNode(char)
