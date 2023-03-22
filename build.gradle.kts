@@ -8,7 +8,7 @@ buildscript {
 }
 
 plugins {
-    kotlin("jvm") version "1.5.10"
+    kotlin("jvm") version "1.8.0"
     `maven-publish`
     application
 }
@@ -30,7 +30,7 @@ tasks.test {
 }
 
 tasks.withType<KotlinCompile>() {
-    kotlinOptions.jvmTarget = "11"
+    kotlinOptions.jvmTarget = "17"
 }
 
 application {
